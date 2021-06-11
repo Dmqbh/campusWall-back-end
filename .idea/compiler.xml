@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="campus-wall-vo" />
+        <module name="campus-wall-dao" />
+        <module name="campus-wall-entity" />
+        <module name="campus-wall-utils" />
+        <module name="campus-wall-web" />
+        <module name="campus-wall-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="back-end" target="8" />
+      <module name="campus-wall-dao" target="8" />
+      <module name="campus-wall-entity" target="8" />
+      <module name="campus-wall-service" target="8" />
+      <module name="campus-wall-utils" target="8" />
+      <module name="campus-wall-vo" target="8" />
+      <module name="campus-wall-web" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

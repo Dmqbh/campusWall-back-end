@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.campuswall.dao.UserDao">
+
+    <!--    邮箱注册功能，需要名字、邮箱和密码  ，默认头像地址-->
+    <insert id="userEmailRegistrationByEmailPassword" useGeneratedKeys="true" keyProperty="userId">
+        insert into user(user_email, user_name, user_password, user_head_portrait)
+        values (#{user.userEmail}, #{user.userName}, #{user.userPassword}, '/img/a.png')
+    </insert>
+
+
+    <!--    手机注册功能，需要名字、手机和密码  ，默认头像地址-->
+    <insert id="userPhoneRegistrationByNamePassword" useGeneratedKeys="true" keyProperty="userId">
+        insert into user(user_phone, user_name, user_password, user_head_portrait)
+        values (#{user.userPhone}, #{user.userName}, #{user.userPassword}, '/img/a.png')
+    </insert>
+
+
+    <!--    编辑个人身份信息，编辑名字，生日，地址，头像,性别-->
+    <update id="editPersonalInformation">
+        update user
+        <set>
+            <if test="user.userName != null ">
+                user_name = #{user.userName},
+            </if>
+            <if test="user.userBirthday != null  ">
+                user_birthday = #{user.userBirthday},
+            </if>
+            <if test="user.userAddress != null ">
+                user_address = #{user.userAddress}},
+            </if>
+            <if test="user.userHeadPortrait != null  ">
+                user_head_portrait = #{user.userHeadPortrait},
+            </if>
+            <if test="user.userSex != null ">
+                user_sex = #{user.userSex},
+            </if>
+        </set>
+        <where>
+            <choose>
+                <when test="user.userEmail != null">
+                    user_email = #{user.userEmail} and
+                </when>
+                <when test="user.userPhone != null">
+                    user_phone = #{user.userPhone } and
+                </when>
+            </choose>
+            user_password = #{user.userPassword}
+        </where>
+    </update>
+    <!--    登录功能，以邮箱或手机号和密码-->
+    <select id="loginByEmailOrPhoneAndPassword" resultType="com.nf.campuswall.entity.UserEntity">
+        select user_email,user_phone,user_password,user_name from user
+        <where>
+            <choose>
+                <when test="user.userPhone != null">
+                    user_phone = #{user.userPhone} and
+                </when>
+                <when test="user.userEmail != null">
+                    user_email = #{user.userEmail} and
+                </when>
+            </choose>
+            user_password = #{user.userPassword}
+        </where>
+    </select>
+    <!--    修改密码，要邮箱或手机号-->
+    <update id="changePassword">
+        update user
+        <set>
+            user_password = #{user.userPassword} and
+        </set>
+        <where>
+            <choose>
+                <when test="user.userEmail != null">
+                    user_email = #{user.userEmail}
+                </when>
+                <when test="user.userPhone != null">
+                    user_phone = #{user.userPhone}
+                </when>
+            </choose>
+        </where>
+    </update>
+</mapper>

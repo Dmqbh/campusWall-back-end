@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/back-end.iml" filepath="$PROJECT_DIR$/.idea/back-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/campus-wall-dao/campus-wall-dao.iml" filepath="$PROJECT_DIR$/campus-wall-dao/campus-wall-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/campus-wall-entity/campus-wall-entity.iml" filepath="$PROJECT_DIR$/campus-wall-entity/campus-wall-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/campus-wall-service/campus-wall-service.iml" filepath="$PROJECT_DIR$/campus-wall-service/campus-wall-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/campus-wall-utils/campus-wall-utils.iml" filepath="$PROJECT_DIR$/campus-wall-utils/campus-wall-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/campus-wall-vo/campus-wall-vo.iml" filepath="$PROJECT_DIR$/campus-wall-vo/campus-wall-vo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/campus-wall-web/campus-wall-web.iml" filepath="$PROJECT_DIR$/campus-wall-web/campus-wall-web.iml" />
     </modules>
   </component>
 </project>
