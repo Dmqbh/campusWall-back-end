@@ -1,0 +1,5 @@
+com\nf\campuswall\util\MybatisUtils.class
+com\nf\campuswall\util\SimpleCORSFilter.class
+com\nf\campuswall\util\EncodingFilter.class
+com\nf\campuswall\util\PaginationUtils.class
+com\nf\campuswall\util\JsonUtil.class

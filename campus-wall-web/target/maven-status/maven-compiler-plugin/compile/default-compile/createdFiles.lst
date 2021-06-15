@@ -1,0 +1,3 @@
+com\nf\campuswall\controller\AddUserByNamePassword.class
+com\nf\campuswall\controller\AddUserByEmailPassword.class
+com\nf\campuswall\controller\UserLoginByPasswordEmail.class

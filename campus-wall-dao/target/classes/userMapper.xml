@@ -65,4 +65,21 @@
             user_password = #{user.userPassword}
         </where>
     </select>
+    <!--    修改密码，要邮箱或手机号-->
+    <update id="changePassword">
+        update user
+        <set>
+            user_password = #{user.userPassword} and
+        </set>
+        <where>
+            <choose>
+                <when test="user.userEmail != null">
+                    user_email = #{user.userEmail}
+                </when>
+                <when test="user.userPhone != null">
+                    user_phone = #{user.userPhone}
+                </when>
+            </choose>
+        </where>
+    </update>
 </mapper>
